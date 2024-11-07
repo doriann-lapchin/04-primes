@@ -1,3 +1,7 @@
+"""
+Ce programmme traite des nombres premiers
+
+"""
 from math import sqrt
 
 #### Fonction secondaire
@@ -5,17 +9,27 @@ from math import sqrt
 
 def isprime(p):
 
-    # votre code ici
+    """
+    Détermine si un nombre est premier.
 
-    pass
-
+    """
+    if p < 2:
+        return False
+    for divisor in range(2, int(sqrt(p)) + 1):
+        if p % divisor == 0:
+            return False
+    return True
 #### Fonction principale
 
-
 def main():
+    """
+    Fonction main
 
-    # vos appels à la fonction secondaire ici
+    """
 
+    isprime(17)
+    isprime(145007)
+    isprime(90)
     for n in range(100):
         if isprime(n):
             print(n, end=", ")
